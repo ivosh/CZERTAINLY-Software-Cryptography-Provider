@@ -1,6 +1,7 @@
 package com.czertainly.cp.soft.dao.entity;
 
-import com.czertainly.api.model.common.attribute.v2.MetadataAttribute;
+import com.czertainly.api.model.common.attribute.common.MetadataAttribute;
+import com.czertainly.api.model.common.attribute.v2.MetadataAttributeV2;
 import com.czertainly.api.model.connector.cryptography.token.TokenInstanceDto;
 import com.czertainly.core.util.AttributeDefinitionUtils;
 import com.czertainly.cp.soft.util.SecretEncodingVersion;
@@ -67,11 +68,12 @@ public class TokenInstance extends UniquelyIdentified {
         this.data = Base64.getEncoder().encodeToString(data);
     }
 
+    @SuppressWarnings("unchecked")
     public List<MetadataAttribute> getMetadata() {
-        return AttributeDefinitionUtils.deserialize(metadata, MetadataAttribute.class);
+        return (List<MetadataAttribute>) (List<?>) AttributeDefinitionUtils.deserialize(metadata, MetadataAttributeV2.class);
     }
 
-    public void setMetadata(List<MetadataAttribute> metadata) {
+    public void setMetadata(List<MetadataAttributeV2> metadata) {
         this.metadata = AttributeDefinitionUtils.serialize(metadata);
     }
 

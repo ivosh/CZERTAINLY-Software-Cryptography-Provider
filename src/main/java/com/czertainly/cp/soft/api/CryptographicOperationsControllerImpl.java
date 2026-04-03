@@ -3,8 +3,8 @@ package com.czertainly.cp.soft.api;
 import com.czertainly.api.exception.NotFoundException;
 import com.czertainly.api.exception.ValidationException;
 import com.czertainly.api.interfaces.connector.cryptography.CryptographicOperationsController;
-import com.czertainly.api.model.client.attribute.RequestAttributeDto;
-import com.czertainly.api.model.common.attribute.v2.BaseAttribute;
+import com.czertainly.api.model.client.attribute.RequestAttribute;
+import com.czertainly.api.model.common.attribute.common.BaseAttribute;
 import com.czertainly.api.model.connector.cryptography.operations.*;
 import com.czertainly.cp.soft.exception.NotSupportedException;
 import com.czertainly.cp.soft.service.AttributeService;
@@ -58,7 +58,7 @@ public class CryptographicOperationsControllerImpl implements CryptographicOpera
     }
 
     @Override
-    public void validateRandomAttributes(String uuid, List<RequestAttributeDto> attributes) throws NotFoundException, ValidationException {
+    public void validateRandomAttributes(String uuid, List<RequestAttribute> attributes) throws NotFoundException, ValidationException {
         // nothing to validate
     }
 

@@ -1,6 +1,7 @@
 package com.czertainly.cp.soft.dao.entity;
 
-import com.czertainly.api.model.common.attribute.v2.MetadataAttribute;
+import com.czertainly.api.model.common.attribute.common.MetadataAttribute;
+import com.czertainly.api.model.common.attribute.v2.MetadataAttributeV2;
 import com.czertainly.api.model.common.enums.cryptography.KeyAlgorithm;
 import com.czertainly.api.model.common.enums.cryptography.KeyFormat;
 import com.czertainly.api.model.common.enums.cryptography.KeyType;
@@ -124,7 +125,7 @@ public class KeyData extends UniquelyIdentified {
         return AttributeDefinitionUtils.deserialize(metadata, MetadataAttribute.class);
     }
 
-    public void setMetadata(List<MetadataAttribute> metadata) {
+    public void setMetadata(List<MetadataAttributeV2> metadata) {
         this.metadata = AttributeDefinitionUtils.serialize(metadata);
     }
 
